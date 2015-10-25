@@ -82,6 +82,7 @@ class BaseDocument(object):
             self._data = SemiStrictDict.create(
                 allowed_keys=self._fields_ordered)()
 
+        self._data = {}
         self._dynamic_fields = SON()
 
         # Assign default values to instance

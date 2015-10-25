@@ -87,7 +87,6 @@ Changes in 0.10.1
 - Fix ignored chained options #842
 - Document save's save_condition error raises `SaveConditionError` exception #1070
 - Fix Document.reload for DynamicDocument. #1050
-- StrictDict & SemiStrictDict are shadowed at init time. #1105
 - Fix ListField minus index assignment does not work. #1119
 - Remove code that marks field as changed when the field has default but not existed in database #1126
 - Remove test dependencies (nose and rednose) from install dependencies list. #1079
