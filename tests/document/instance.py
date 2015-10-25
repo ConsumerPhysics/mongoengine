@@ -843,6 +843,15 @@ class InstanceTest(unittest.TestCase):
 
         self.assertDbEqual([dict(other_doc.to_mongo()), dict(doc.to_mongo())])
 
+
+    def test_dict_removal_breakage(self):
+        class TestDoc(EmbeddedDocument):
+            field = StringField()
+
+        raise NotImplementedError("todo - test that breaks on 6355c404ccc6feaf0c0006825b1574fb2e5e39e1")
+
+
+
     def test_save(self):
         """Ensure that a document may be saved in the database.
         """
