@@ -29,7 +29,7 @@ class BaseDict(dict):
         value = super(BaseDict, self).__getitem__(key)
 
         EmbeddedDocument = _import_class('EmbeddedDocument')
-        if isinstance(value, EmbeddedDocument) and value._instance is None:
+        if isinstance(value, EmbeddedDocument):
             value._instance = self._instance
         elif not isinstance(value, BaseDict) and isinstance(value, dict):
             value = BaseDict(value, None, '%s.%s' % (self._name, key))
@@ -114,7 +114,7 @@ class BaseList(list):
         value = super(BaseList, self).__getitem__(key)
 
         EmbeddedDocument = _import_class('EmbeddedDocument')
-        if isinstance(value, EmbeddedDocument) and value._instance is None:
+        if isinstance(value, EmbeddedDocument):
             value._instance = self._instance
         elif not isinstance(value, BaseDict) and isinstance(value, dict):
             value = BaseDict(value, None, '%s.%s' % (self._name, key))
